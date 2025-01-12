@@ -18,7 +18,9 @@ const Packages = () => {
   return (
     <div className="package-bg-img bg-fixed h-[80vh]">
       <div className="text-center">
-        <h2 className="text-5xl font-bold text-orange-600 pb-5">Our Packges</h2>
+        <h2 className="text-5xl font-bold text-white pb-5">
+          Our Top Packges
+        </h2>
       </div>
       <div className="mx-auto max-w-screen-xl mt-10">
         <Swiper

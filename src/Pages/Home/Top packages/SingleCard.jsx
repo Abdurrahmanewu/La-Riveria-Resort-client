@@ -1,5 +1,10 @@
+import { Link } from "react-router-dom";
+
 const SingleCard = ({ card }) => {
   const { _id, title, img, price, description } = card;
+  // const words = description.split(" ");
+  // const shortDescription = words.slice(0, 10).join(" ");
+
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-xl">
@@ -7,10 +12,21 @@ const SingleCard = ({ card }) => {
           <img src={img} alt="" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{title}</h2>
-          <p>Price: ৳{price}</p>
+          <h2 className="card-title text-2xl">{title}</h2>
+          <p className="text-xl font-semibold">
+            Price: <span className="text-xl font-extrabold">৳{price}</span>
+          </p>
+          <Link>
+            <p className="text-2xl text-red-800">More Details...</p>
+          </Link>
+
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+            <button
+              className="btn text-white text-xl "
+              style={{ backgroundColor: "rgb(36, 195, 88)" }}
+            >
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
