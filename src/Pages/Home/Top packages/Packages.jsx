@@ -18,20 +18,32 @@ const Packages = () => {
   return (
     <div className="package-bg-img bg-fixed h-[80vh]">
       <div className="text-center">
-        <h2 className="text-5xl font-bold text-white pb-5">
-          Our Top Packges
-        </h2>
+        <h2 className="text-5xl font-bold text-white pb-5">Our Top Packges</h2>
       </div>
       <div className="mx-auto max-w-screen-xl mt-10">
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          // slidesPerView={3}
+          spaceBetween={20}
           pagination={{
             clickable: true,
           }}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
+          }}
+          breakpoints={{
+            480: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1440: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
           }}
           modules={[Pagination, Autoplay, Navigation]}
           className="mySwiper"

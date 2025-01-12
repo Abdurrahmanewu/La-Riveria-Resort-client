@@ -6,8 +6,12 @@ const SingleCard = ({ card }) => {
   // const shortDescription = words.slice(0, 10).join(" ");
 
   return (
-    <div>
-      <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="">
+      <div
+        className="card bg-base-100 shadow-xl 
+                      sm:w-full md:w-80 lg:w-96 
+                      sm:mx-auto md:mx-4 lg:mx-6"
+      >
         <figure>
           <img src={img} alt="" />
         </figure>

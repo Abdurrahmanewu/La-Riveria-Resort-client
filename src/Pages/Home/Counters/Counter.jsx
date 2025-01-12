@@ -12,7 +12,7 @@ const Counter = () => {
     { label: "Friendly Team & Guide", value: 15, suffix: "+" },
   ];
   return (
-    <div>
+    <div className="mt-20">
       <div className="stats-counter" ref={ref}>
         {statsData.map((stat, index) => (
           <div className="stat-item" key={index}>
