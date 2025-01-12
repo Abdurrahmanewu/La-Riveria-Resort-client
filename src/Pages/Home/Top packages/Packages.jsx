@@ -40,7 +40,7 @@ const Packages = () => {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            1440: {
+            1040: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
