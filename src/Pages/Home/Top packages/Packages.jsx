@@ -9,7 +9,7 @@ import "./Packages.css";
 const Packages = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch("../../../../public/packages.json")
+    fetch("/packages.json")
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, []);
