@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const SingleCard = ({ card }) => {
-  const { _id, title, img, price, description } = card;
+  // eslint-disable-next-line react/prop-types
+  const { title, img, price } = card;
   // const words = description.split(" ");
   // const shortDescription = words.slice(0, 10).join(" ");
 

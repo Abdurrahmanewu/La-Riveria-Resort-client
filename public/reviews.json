@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Sophia Kim",
+    "designation": "Traveler",
+    "feedback": "This retreat was an incredible escape from city life. I loved the sustainability focus and top-notch amenities!",
+    "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg"
+  },
+  {
+    "name": "Liam Patel",
+    "designation": "Nature Enthusiast",
+    "feedback": "A perfect blend of comfort and eco-conscious living. The treehouse was an unforgettable experience!",
+    "image": "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg"
+  },
+  {
+    "name": "Ava Martinez",
+    "designation": "Adventure Seeker",
+    "feedback": "From the lush surroundings to the friendly staff, everything was perfect. Can’t wait to visit again!",
+    "image": "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg"
+  },
+  {
+    "name": "Ethan Zhang",
+    "designation": "Photographer",
+    "feedback": "The views were stunning, and the eco-friendly design made it even better. Highly recommended!",
+    "image": "https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg"
+  },
+  {
+    "name": "Mia Johnson",
+    "designation": "Eco-Warrior",
+    "feedback": "Finally, a luxurious place that cares about the planet. I’ll be spreading the word!",
+    "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
+  },
+  {
+    "name": "Noah Hassan",
+    "designation": "Food Blogger",
+    "feedback": "The farm-to-table dining was divine. A paradise for any foodie who values sustainability!",
+    "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
+  },
+  {
+    "name": "Isabella Russo",
+    "designation": "Wellness Coach",
+    "feedback": "A true sanctuary for relaxation and rejuvenation. The eco-friendly touch is the cherry on top!",
+    "image": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+  },
+  {
+    "name": "Lucas Evans",
+    "designation": "Backpacker",
+    "feedback": "It’s rare to find a place that feels like home while also making a positive impact on the environment.",
+    "image": "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+  },
+  {
+    "name": "Harper Singh",
+    "designation": "Yoga Instructor",
+    "feedback": "I’ve stayed in many retreats, but this one takes the crown for its serenity and commitment to nature.",
+    "image": "https://images.pexels.com/photos/936575/pexels-photo-936575.jpeg"
+  },
+  {
+    "name": "Oliver Nguyen",
+    "designation": "Entrepreneur",
+    "feedback": "Balancing work and leisure has never been easier. A truly innovative and inspiring space!",
+    "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+  }
+]

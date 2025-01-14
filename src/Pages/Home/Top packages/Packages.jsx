@@ -13,7 +13,7 @@ const Packages = () => {
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, []);
-  console.log(packages);
+  // console.log(packages);
 
   return (
     <div className="package-bg-img bg-fixed h-[80vh]">
