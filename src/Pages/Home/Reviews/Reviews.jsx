@@ -15,10 +15,10 @@ const Reviews = () => {
   }, []);
   // console.log(reviews);
   return (
-    <div className="mx-auto m-20 max-w-screen-xl review-bg-img relative h-[60vh] bg-cover bg-center">
-      <div className="absolute inset-0 bg-green-400 bg-opacity-5 backdrop-blur-md"></div>
+    <div className="mx-auto m-20 max-w-screen-xl review-bg-img bg-fixed relative h-[60vh] bg-cover bg-center">
+      <div className="absolute inset-0 bg-black bg-opacity-70"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h1 className="text-4xl font-bold text-gray-800 md:text-5xl mb-8">
+        <h1 className="text-4xl font-bold text-white md:text-5xl mb-8">
           Hear What Our Guests Are Saying About Their Stay
         </h1>
         <Swiper
