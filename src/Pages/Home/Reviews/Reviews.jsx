@@ -24,7 +24,7 @@ const Reviews = () => {
         <Swiper
           spaceBetween={20}
           autoplay={{
-            delay: 2500,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           loop={true}
