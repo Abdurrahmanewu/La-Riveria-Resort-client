@@ -65,8 +65,9 @@ const Booking = () => {
                 className="p-3 border border-gray-300 rounded-lg"
               >
                 <option value="">Select Cottage Type</option>
-                <option value="type1">Type 1</option>
-                <option value="type2">Type 2</option>
+                <option value="type1">River view Cottages</option>
+                <option value="type2">Field view Cottages</option>
+                <option value="type3">Entry side Cottages</option>
               </select>
               <input
                 type="number"
