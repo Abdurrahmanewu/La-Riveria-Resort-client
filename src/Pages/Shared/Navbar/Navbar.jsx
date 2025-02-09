@@ -1,4 +1,7 @@
 // import { Link } from 'react-router-dom';
+
+import { Link } from "react-router-dom";
+
 // import logo from '../../../assets/Logo/logo.svg'
 const Navbar = () => {
   return (
@@ -26,20 +29,20 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Home</a>
+              <Link to="/">Home</Link>
             </li>
 
             <li>
-              <a>Packages</a>
+              <Link to="/packages">Packages</Link>
             </li>
             <li>
-              <a>Activities</a>
+              <Link to="/activities">Activities </Link>
             </li>
             <li>
-              <a>About Us</a>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <a>Contacts</a>
+              <Link to="/contacts">Contacts</Link>
             </li>
           </ul>
         </div>
@@ -51,20 +54,20 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </li>
 
           <li>
-            <a>Packages</a>
+            <Link to="/packages">Packages</Link>
           </li>
           <li>
-            <a>Activities</a>
+            <Link to="/activities">Activities </Link>
           </li>
           <li>
-            <a>About Us</a>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <a>Contacts</a>
+            <Link to="/contacts">Contacts</Link>
           </li>
         </ul>
       </div>
