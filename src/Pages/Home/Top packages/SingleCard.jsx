@@ -15,10 +15,10 @@ const SingleCard = ({ card }) => {
                       sm:mx-auto md:mx-4 lg:mx-6"
       >
         <figure>
-          <img src={img} alt={title} />
+          <img src={img} alt={title} className="w-full h-60 object-cover" />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title text-2xl">{title}</h2>
+        <div className="card-body p-5">
+          <h2 className="card-title text-2xl bold">{title}</h2>
           <p className="text-xl font-semibold">
             Price: <span className="text-xl font-extrabold">৳{price}</span>
           </p>
