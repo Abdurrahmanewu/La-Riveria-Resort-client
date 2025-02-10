@@ -15,7 +15,7 @@ const SingleCard = ({ card }) => {
                       sm:mx-auto md:mx-4 lg:mx-6"
       >
         <figure>
-          <img src={img} alt="" />
+          <img src={img} alt={title} />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-2xl">{title}</h2>
@@ -28,8 +28,8 @@ const SingleCard = ({ card }) => {
 
           <div className="card-actions justify-end">
             <button
-              className="btn text-white text-xl "
-              style={{ backgroundColor: "rgb(36, 195, 88)" }}
+              className="btn bg-green-500 hover:bg-green-600 text-white text-xl "
+              // style={{ backgroundColor: "rgb(36, 195, 88)" }}
             >
               Buy Now
             </button>
