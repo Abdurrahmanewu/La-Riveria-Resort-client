@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const SingleCard = ({ card }) => {
   // eslint-disable-next-line react/prop-types
-  const { title, img, price } = card;
+  const { _id, title, img, price } = card;
   // const words = description.split(" ");
   // const shortDescription = words.slice(0, 10).join(" ");
 
@@ -15,14 +15,14 @@ const SingleCard = ({ card }) => {
                       sm:mx-auto md:mx-4 lg:mx-6"
       >
         <figure>
-          <img src={img} alt={title} className="w-full h-60 object-cover" />
+          <img src={img} alt={title} className="w-full  object-cover" />
         </figure>
         <div className="card-body p-5">
           <h2 className="card-title text-2xl bold">{title}</h2>
           <p className="text-xl font-semibold">
             Price: <span className="text-xl font-extrabold">৳{price}</span>
           </p>
-          <Link>
+          <Link to={`/singleCardDetails/${_id}`}>
             <p className="text-2xl text-red-800">More Details...</p>
           </Link>
 
