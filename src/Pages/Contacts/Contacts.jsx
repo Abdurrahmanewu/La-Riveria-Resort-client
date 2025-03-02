@@ -14,7 +14,7 @@ const Contacts = () => {
         conversation. Our support team is here to help!
       </p>
       <a
-        href="tel:+1234567890"
+        href="tel:+8801711193932"
         className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-blue-600 text-white text-lg md:text-xl font-medium rounded-full shadow-md hover:bg-blue-700 transition duration-300"
       >
         📞 Call Us Now
