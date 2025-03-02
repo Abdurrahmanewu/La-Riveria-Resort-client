@@ -9,16 +9,19 @@ const Contacts = () => {
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mt-6 text-center text-gray-800">
         Having any trouble?
       </h2>
-      <p className="text-md md:text-lg lg:text-xl text-center text-gray-600 mt-4 max-w-lg">
+      <p className="text-md md:text-lg lg:text-2xl text-center text-gray-600 mt-4 max-w-lg">
         If you need any assistance, feel free to call us for a one-on-one
         conversation. Our support team is here to help!
       </p>
       <a
-        href="tel:+8801711193932"
+        href="tel:+8801743064161"
         className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-blue-600 text-white text-lg md:text-xl font-medium rounded-full shadow-md hover:bg-blue-700 transition duration-300"
       >
         📞 Call Us Now
       </a>
+      <p className="text-md md:text-2lg lg:text-4xl text-center text-gray-600 mt-4 max-w-lg">
+        Moblie: +8801743064161
+      </p>
     </div>
   );
 };
