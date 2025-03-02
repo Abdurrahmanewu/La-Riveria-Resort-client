@@ -1,7 +1,7 @@
 import { PhoneCall } from "lucide-react";
 const Contacts = () => {
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-16 md:py-24 lg:py-32 bg-blue-50">
+    <div className="flex flex-col items-center justify-center px-6 py-20 md:py-28 lg:py-32 bg-blue-50">
       <div className="bg-blue-500 p-4 rounded-full shadow-lg">
         <PhoneCall className="text-white w-12 h-12 md:w-16 md:h-16" />
       </div>
