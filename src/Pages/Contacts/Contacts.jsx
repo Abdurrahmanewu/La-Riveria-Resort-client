@@ -1,4 +1,5 @@
 import { PhoneCall } from "lucide-react";
+import logo from "../../assets/Logo/logo_La_Riveria-removebg-preview.png";
 const Contacts = () => {
   return (
     <div className="flex flex-col items-center justify-center px-6 py-20 md:py-28 lg:py-32 bg-blue-50">
@@ -22,6 +23,11 @@ const Contacts = () => {
       <p className="text-md md:text-2lg lg:text-4xl text-center text-gray-600 mt-4 max-w-lg">
         Moblie: +8801743064161
       </p>
+
+      <div>
+        <img src={logo} alt="" />
+        <p>Hello</p>
+      </div>
     </div>
   );
 };
