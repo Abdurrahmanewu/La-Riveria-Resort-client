@@ -58,7 +58,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar fixed z-10 h-24 bg-black bg-opacity-30 text-white w-full px-4 lg:px-10">
+    <div className="navbar fixed z-10 max-h-[10vh] bg-black bg-opacity-30 text-white w-full px-4 lg:px-10">
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
           <div
@@ -99,7 +99,7 @@ const Navbar = () => {
 
       <div className="navbar-center absolute left-1/2 transform -translate-x-1/2 lg:hidden">
         <Link to="/">
-          <img className="w-28" src={logo} alt="logo" />
+          <img className="sm: w-16 md:w-16" src={logo} alt="logo" />
         </Link>
       </div>
 
