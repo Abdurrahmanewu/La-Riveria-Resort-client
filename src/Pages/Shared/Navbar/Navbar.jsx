@@ -111,7 +111,9 @@ const Navbar = () => {
 
       {/* Navbar End - Button on Right Side */}
       <div className="navbar-end ml-auto lg:ml-0">
-        <a className="btn">Button</a>
+        <Link to="/login" className="btn">
+          Login
+        </Link>
       </div>
     </div>
   );

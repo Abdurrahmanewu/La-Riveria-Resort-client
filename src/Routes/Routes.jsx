@@ -6,6 +6,8 @@ import Activities from "../Pages/Activities/Activities";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import Contacts from "../Pages/Contacts/Contacts";
 import SingleCardDetails from "../Pages/Home/Top packages/SingleCardDetails";
+import Login from "../Pages/Login/Login";
+import SignUp from "../Pages/SignUp/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +44,14 @@ export const router = createBrowserRouter([
         //   const data = await response.json();
         //   return data.find((item) => item.id === params._id);
         // },
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },
