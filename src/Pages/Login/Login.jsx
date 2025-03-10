@@ -1,16 +1,50 @@
 // import React from "react";
 import { Link } from "react-router-dom";
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplate,
+  validateCaptcha,
+} from "react-simple-captcha";
 import img from "../../assets/features/FormPic.jpg";
+import logo from "../../assets/Logo/logo_La_Riveria-removebg-preview.png";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+// import { use } from "react";
 
 const Login = () => {
+  const [disable, setDisable] = useState(true);
+  const { login } = useContext(AuthContext);
+  useEffect(() => {
+    loadCaptchaEnginge(2);
+  }, []);
   const handleLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email, password);
+    const captcha = event.target.captcha.value;
+    console.log(email, password, captcha);
+    login(email, password).then((result) => {
+      const user = result.user;
+      console.log(user);
+    });
   };
+  const handleValidateCaptcha = (e) => {
+    const user_captcha_value = e.target.value;
+    if (validateCaptcha(user_captcha_value)) {
+      setDisable(false);
+    } else {
+      setDisable(true);
+      alert("Captcha is wrong");
+    }
+  };
+
   return (
-    <div className="container mx-auto pt-32 max-w-screen-xl">
+    <div className="container mx-auto max-w-screen-xl">
+      <div className="flex justify-center items-center my-4">
+        <Link to="/">
+          <img className="h-[20vh]" src={logo} alt="" />
+        </Link>
+      </div>
       <h2 className="text-center text-5xl font-bold font-serif text-[#d89b62] pb-5">
         Login Now
       </h2>
@@ -42,7 +76,10 @@ const Login = () => {
 
         {/* Right Section */}
         <div className="flex-1 form-section bg-[#a1bd94] p-6 rounded-lg mt-6 lg:mt-0">
-          <form onSubmit={handleLogin} className="flex flex-col space-y-4 lg:space-y-10">
+          <form
+            onSubmit={handleLogin}
+            className="flex flex-col space-y-4 lg:space-y-10"
+          >
             <input
               type="email"
               name="email"
@@ -50,7 +87,7 @@ const Login = () => {
               required
               className="p-3 border border-gray-300 rounded-lg"
             />
-            <div className="grid grid-cols-1 gap-4 lg:gap-10">
+            <div className="grid grid-cols-1 gap-2">
               <input
                 type="password"
                 name="password"
@@ -58,19 +95,24 @@ const Login = () => {
                 required
                 className="p-3 border border-gray-300 rounded-lg"
               />
-              {/* <input
-                type="email"
-                name="email"
-                placeholder="Email"
+              <div className="mt-2 p-0 ">
+                <LoadCanvasTemplate />
+              </div>
+              <input
+                onBlur={handleValidateCaptcha}
+                type="text"
+                name="captcha"
+                placeholder="type text above"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
-              /> */}
+              />
             </div>
 
             <input
               className="p-3 bg-[#d89b62] text-xl text-white font-bold rounded-lg hover:bg-[#b57c4c]"
               type="submit"
               value="Login"
+              disabled={disable}
             />
           </form>
           <p className=" text-center p-2">

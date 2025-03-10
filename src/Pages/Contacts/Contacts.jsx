@@ -26,7 +26,6 @@ const Contacts = () => {
 
       <div>
         <img src={logo} alt="" />
-        <p>Hello</p>
       </div>
     </div>
   );

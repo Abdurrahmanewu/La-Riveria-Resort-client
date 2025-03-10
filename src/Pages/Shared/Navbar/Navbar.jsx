@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 
 import logo from "../../../assets/Logo/logo_La_Riveria-removebg-preview.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout()
+      .then(() => {})
+      .catch((e) => {
+        console.log("error", e);
+      });
+  };
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -111,9 +120,25 @@ const Navbar = () => {
 
       {/* Navbar End - Button on Right Side */}
       <div className="navbar-end ml-auto lg:ml-0">
-        <Link to="/login" className="btn">
-          Login
-        </Link>
+        {user ? (
+          <>
+            <Link
+              onClick={handleLogout}
+              className="btn bg-[#d89b62]  text-xl text-black hover:bg-[#c2681e]"
+            >
+              LogOut
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link
+              to="/login"
+              className="btn bg-green-400 hover:bg-green-600 text-black text-xl "
+            >
+              Login
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
