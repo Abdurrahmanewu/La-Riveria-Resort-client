@@ -1,11 +1,38 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 // eslint-disable-next-line react/prop-types
 const SingleCard = ({ card }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user } = useContext(AuthContext);
   // eslint-disable-next-line react/prop-types
   const { _id, title, img, price } = card;
   // const words = description.split(" ");
   // const shortDescription = words.slice(0, 10).join(" ");
+  // eslint-disable-next-line no-unused-vars
+  const handleCard = (card) => {
+    if (user && user.email) {
+      console.log(title);
+    } else {
+      Swal.fire({
+        title: "You are not Logged In",
+        text: "Please login to add to the cart",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, login",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          //   send the user to the login page
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
+  };
 
   return (
     <div className="">
@@ -28,6 +55,7 @@ const SingleCard = ({ card }) => {
 
           <div className="card-actions justify-end">
             <button
+              onClick={() => handleCard(card)}
               className="btn bg-green-500 hover:bg-green-600 text-white text-xl "
               // style={{ backgroundColor: "rgb(36, 195, 88)" }}
             >

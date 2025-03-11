@@ -1,12 +1,13 @@
 // import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/features/FormPic.jpg";
 import logo from "../../assets/Logo/logo_La_Riveria-removebg-preview.png";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
-
+import Swal from "sweetalert2";
 const SignUp = () => {
+  const navigate = useNavigate();
   const { createUser } = useContext(AuthContext);
   const {
     register,
@@ -18,15 +19,17 @@ const SignUp = () => {
     createUser(data.email, data.password).then((result) => {
       const loggedInUser = result.user;
       console.log(loggedInUser);
+      if(loggedInUser){
+        Swal.fire({
+          icon: "success",
+          title: "SignUp Successful",
+          text: "Welcome to La Riveria Resort Park",
+        });
+        navigate("/");
+      }
     });
   };
-  // const handleSignUp = (event) => {
-  //   event.preventDefault();
-  //   const name = event.target.name.value;
-  //   const email = event.target.email.value;
-  //   const password = event.target.password.value;
-  //   console.log(name, email, password);
-  // };
+  
   return (
     <div className="container mx-auto max-w-screen-xl">
       <div className="flex justify-center items-center my-4">

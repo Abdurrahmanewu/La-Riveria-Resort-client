@@ -1,6 +1,39 @@
+import { useContext } from "react";
 import img from "../../../assets/features/FormPic.jpg";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Booking = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user } = useContext(AuthContext);
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    if (user && user.email) {
+      console.log(data);
+    } else {
+      Swal.fire({
+        title: "You are not Logged In",
+        text: "Please login to add to the cart",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, login",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          //   send the user to the login page
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
+  };
   return (
     <div className="container mx-auto max-w-screen-xl">
       <h2 className="text-center text-5xl font-bold font-serif text-[#d89b62] pb-5">
@@ -34,13 +67,17 @@ const Booking = () => {
 
         {/* Right Section */}
         <div className="flex-1 form-section bg-[#a1bd94] p-6 rounded-lg mt-6 lg:mt-0">
-          <form className="flex flex-col space-y-4">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col space-y-4"
+          >
             <input
               type="text"
               name="name"
               placeholder="Name"
               required
               className="p-3 border border-gray-300 rounded-lg"
+              {...register("name")}
             />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <input
@@ -49,6 +86,7 @@ const Booking = () => {
                 placeholder="Phone Number"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
+                {...register("phone")}
               />
               <input
                 type="email"
@@ -56,25 +94,50 @@ const Booking = () => {
                 placeholder="Email"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
+                {...register("email")}
               />
             </div>
+            <select
+              name="package"
+              required
+              className="p-3 border border-gray-300 rounded-lg"
+              {...register("package")}
+            >
+              <option value="">Select Package</option>
+              <option value="Couple Night Stay Package">
+                Couple Night Stay Package
+              </option>
+              <option value="Couple Day-Long package">
+                Couple Day-Long package
+              </option>
+              <option value="22 Hours Couple Package ">
+                22 Hours Couple Package
+              </option>
+              <option value="Wedding package">Wedding package</option>
+              <option value="Day-Long Without Room">
+                Day-Long Without Room
+              </option>
+              <option value="Live BBQ package">Live BBQ package</option>
+            </select>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <select
-                name="cottageType"
+                name="cottage type"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
+                {...register("cottage type")}
               >
                 <option value="">Select Cottage Type</option>
-                <option value="type1">River view Cottages</option>
-                <option value="type2">Field view Cottages</option>
-                <option value="type3">Entry side Cottages</option>
+                <option value="River view Cottages">River view Cottages</option>
+                <option value="Field view Cottages">Field view Cottages</option>
+                <option value="Entry side Cottages">Entry side Cottages</option>
               </select>
               <input
                 type="number"
-                name="guests"
+                name="guests number"
                 placeholder="Number of Guests"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
+                {...register("guests number")}
               />
             </div>
 
@@ -89,9 +152,10 @@ const Booking = () => {
                 <input
                   id="checkin"
                   type="date"
-                  name="checkin"
+                  name="checkin date"
                   required
                   className="p-3 pt-6 border border-gray-300 rounded-lg w-full"
+                  {...register("checkin date")}
                 />
               </div>
               <div className="relative">
@@ -104,9 +168,10 @@ const Booking = () => {
                 <input
                   id="checkout"
                   type="date"
-                  name="checkout"
+                  name="checkout date"
                   required
                   className="p-3 pt-6 border border-gray-300 rounded-lg w-full"
+                  {...register("checkout date")}
                 />
               </div>
             </div>
@@ -114,6 +179,7 @@ const Booking = () => {
               name="specialRequest"
               placeholder="Add-Ons or Special Request"
               className="p-3 border border-gray-300 rounded-lg"
+              {...register("specialRequest")}
             ></textarea>
             <button
               type="submit"

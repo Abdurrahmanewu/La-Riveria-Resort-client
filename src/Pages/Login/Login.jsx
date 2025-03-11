@@ -1,5 +1,5 @@
 // import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -9,13 +9,19 @@ import img from "../../assets/features/FormPic.jpg";
 import logo from "../../assets/Logo/logo_La_Riveria-removebg-preview.png";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import SocialLogin from "../SocialLogin/SocialLogin";
 // import { use } from "react";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const [disable, setDisable] = useState(true);
-  const { login } = useContext(AuthContext);
+  const { login, user } = useContext(AuthContext);
+  // console.log(user);
   useEffect(() => {
-    loadCaptchaEnginge(2);
+    loadCaptchaEnginge();
   }, []);
   const handleLogin = (event) => {
     event.preventDefault();
@@ -23,10 +29,27 @@ const Login = () => {
     const password = event.target.password.value;
     const captcha = event.target.captcha.value;
     console.log(email, password, captcha);
-    login(email, password).then((result) => {
-      const user = result.user;
-      console.log(user);
-    });
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        if (user) {
+          Swal.fire({
+            icon: "success",
+            title: "Login Successful",
+            text: "Welcome to La Riveria Resort Park",
+          });
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((e) => {
+        console.log("error", e);
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Please check your credentials",
+        });
+      });
   };
   const handleValidateCaptcha = (e) => {
     const user_captcha_value = e.target.value;
@@ -103,7 +126,7 @@ const Login = () => {
                 type="text"
                 name="captcha"
                 placeholder="type text above"
-                required
+                // required
                 className="p-3 border border-gray-300 rounded-lg"
               />
             </div>
@@ -112,7 +135,7 @@ const Login = () => {
               className="p-3 bg-[#d89b62] text-xl text-white font-bold rounded-lg hover:bg-[#b57c4c]"
               type="submit"
               value="Login"
-              disabled={disable}
+              // disabled={disable}
             />
           </form>
           <p className=" text-center p-2">
@@ -126,6 +149,7 @@ const Login = () => {
               </Link>
             </small>
           </p>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
