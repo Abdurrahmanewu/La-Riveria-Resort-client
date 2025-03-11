@@ -3,7 +3,7 @@ import boat from "../../assets/Activities/Boat Riding.jpg";
 import playZone from "../../assets/Activities/PlaZone-2.jpg";
 const Activities = () => {
   return (
-    <div className="mx-auto max-w-screen-xl pt-20 px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-8 lg:px-12 pt-28">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10">
         Adventure Awaits Beyond Your Doorstep
       </h2>

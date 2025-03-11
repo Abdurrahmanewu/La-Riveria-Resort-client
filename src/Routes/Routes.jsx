@@ -8,6 +8,7 @@ import Contacts from "../Pages/Contacts/Contacts";
 import SingleCardDetails from "../Pages/Home/Top packages/SingleCardDetails";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import BookNow from "../Pages/CheckOut/BookNow/BookNow";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/booknow",
+        element: <BookNow></BookNow>
       },
     ],
   },

@@ -15,7 +15,7 @@ const SingleCard = ({ card }) => {
   // eslint-disable-next-line no-unused-vars
   const handleCard = (card) => {
     if (user && user.email) {
-      console.log(title);
+      navigate("/booknow");
     } else {
       Swal.fire({
         title: "You are not Logged In",
