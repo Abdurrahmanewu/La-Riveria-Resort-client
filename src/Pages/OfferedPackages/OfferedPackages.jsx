@@ -1,14 +1,8 @@
-import { useEffect, useState } from "react";
 import SingleCard from "../Home/Top packages/SingleCard";
+import usePacakges from "../../Hooks/usePacakges";
 
 const OfferedPackages = () => {
-  const [packages, setPackages] = useState([]);
-
-  useEffect(() => {
-    fetch("/packages.json")
-      .then((res) => res.json())
-      .then((data) => setPackages(data));
-  }, []);
+  const [packages] = usePacakges();
 
   return (
     <div className="py-20 mx-auto max-w-screen-xl">

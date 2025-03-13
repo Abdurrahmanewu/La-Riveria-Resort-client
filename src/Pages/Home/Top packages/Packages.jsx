@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "./Packages.css";
+import usePacakges from "../../../Hooks/usePacakges";
 
 const Packages = () => {
-  const [packages, setPackages] = useState([]);
-  useEffect(() => {
-    fetch("/packages.json")
-      .then((res) => res.json())
-      .then((data) => setPackages(data));
-  }, []);
-  // console.log(packages);
-
+  const [packages] = usePacakges();
   return (
     <div className="package-bg-img bg-fixed h-[80vh]">
       <div className="text-center">
