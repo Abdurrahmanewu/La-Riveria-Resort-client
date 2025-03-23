@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/Logo/logo_La_Riveria-removebg-preview.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import { FaUserCheck } from "react-icons/fa";
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const handleLogout = () => {
@@ -122,12 +123,41 @@ const Navbar = () => {
       <div className="navbar-end ml-auto lg:ml-0">
         {user ? (
           <>
-            <Link
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar flex items-center justify-center"
+              >
+                <div className="w-12 h-10 flex items-center justify-center rounded-full bg-white pt-1">
+                  <FaUserCheck className="w-12 text-green-800 text-2xl lg:text-3xl" />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <Link className="btn bg-[#d89b62] text-sm md:text-base lg:text-lg text-black hover:bg-[#c2681e] py-2 px-3">
+                    My Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    onClick={handleLogout}
+                    className="btn bg-[#d89b62] text-sm md:text-base lg:text-lg text-black hover:bg-[#c2681e] py-2 px-3"
+                  >
+                    LogOut
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* <Link
               onClick={handleLogout}
               className="btn bg-[#d89b62]  text-xl text-black hover:bg-[#c2681e]"
             >
               LogOut
-            </Link>
+            </Link> */}
           </>
         ) : (
           <>
