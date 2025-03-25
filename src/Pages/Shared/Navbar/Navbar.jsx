@@ -138,7 +138,10 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
               >
                 <li>
-                  <Link className="btn bg-[#d89b62] text-sm md:text-base lg:text-lg text-black hover:bg-[#c2681e] py-2 px-3">
+                  <Link
+                    to="/dashboard"
+                    className="btn bg-[#d89b62] text-sm md:text-base lg:text-lg text-black hover:bg-[#c2681e] py-2 px-3"
+                  >
                     My Orders
                   </Link>
                 </li>

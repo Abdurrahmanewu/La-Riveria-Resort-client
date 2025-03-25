@@ -9,6 +9,8 @@ import SingleCardDetails from "../Pages/Home/Top packages/SingleCardDetails";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import BookNow from "../Pages/CheckOut/BookNow/BookNow";
+import DashBoard from "../LayOut/DashBoard";
+import AllReservation from "../Pages/DashBoard/Admin/AllReservation";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +59,16 @@ export const router = createBrowserRouter([
       {
         path: "/booknow",
         element: <BookNow></BookNow>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashBoard></DashBoard>,
+    children: [
+      {
+        path: "allreservation",
+        element: <AllReservation></AllReservation>,
       },
     ],
   },
