@@ -1,5 +1,5 @@
 import Banner from "../Banner/Banner";
-import Booking from "../Booking/Booking";
+// import Booking from "../Booking/Booking";
 import Counter from "../Counters/Counter";
 import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
@@ -13,7 +13,7 @@ const Home = () => {
       <Packages></Packages>
       <Counter></Counter>
       <Reviews></Reviews>
-      <Booking></Booking>
+      {/* <Booking></Booking> */}
     </div>
   );
 };

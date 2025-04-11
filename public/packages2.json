@@ -1,0 +1,45 @@
+[
+  {
+    "package_id": "01",
+    "title": "Couple Day-Long package ",
+    "img": "https://i.ibb.co/60x5VrV/Day-Long-Package.jpg",
+    "price": "5500",
+    "description": " Make a day more than a day at La Riveria Resort & Park! La Riveria Resort is designed to provide a unique riverside experience to Dhaka.We are located just 5 min away from Kancon Bridge, Purbachol. The closest resort to Dhaka. Our goal is to provide a place to relax in the city with their family. Our kitchen is equipped with modern amenities that serve exotic continental dishes. Time: 10:00 AM – 6:00 PM Child Policy:(0-5) years old (only food cost if needed) (6-10) years old, BDT 1,800/- Above 10 years full charge. "
+  },
+  {
+    "package_id": "02",
+    "title": "Day-Long Without Room ",
+    "img": "https://i.ibb.co/JnyBSkp/Pool.jpg",
+    "price": "1500",
+    "description": " Make a day more than a day at La Riveria Resort & Park! La Riveria Resort is designed to provide a unique riverside experience to Dhaka. We are located just 5 min away from Kancon Bridge, Purbachol. The closest resort to Dhaka. Our goal is to provide a place to relax in the city with their family. Our kitchen is equipped with modern amenities that serve exotic continental dishes. Time: 10:00 AM – 6:00 PM Child Policy: (0-5) years old (only food cost if needed) (6-10) years old, BDT 1,000/- Above 10 years full charge. "
+  },
+  {
+    "package_id": "03",
+    "title": "Couple Night Stay Package",
+    "img": "https://i.ibb.co/tPSFNqT/Night-stay-package.jpg",
+    "price": "7600",
+    "description": " La Riveria offers a “Night Stay Package” ideally suited for a couple to enjoy their precious moments. This package includes Evening Snacks, Dinner, and Breakfast with Room. Child Policy: (0-5) years old (only food cost if needed) (6-10) years old, Night stay package- BDT 2,000/- Above 10 years full charge. Check-In Time 6.00 PM Check Out Time 9.30 AM  "
+  },
+
+  {
+    "package_id": "04",
+    "title": "22 Hours Couple Package",
+    "img": "https://i.ibb.co/4N4zMrW/22-hours-Night-Stay.jpg",
+    "price": "11500",
+    "description": " La Riveria offers a “22 Hours Package” ideal for couples to enjoy their precious moments. This package includes Lunch, Evening Snacks, Dinner, and Breakfast With Room. Child Policy:(0-5) years old (only food cost if needed) (6-10) years old, BDT 2,800/- Above 10 years full charge. Check-In Time is 10.00 AM and Check Out Time is 9.30 AM on the next day. "
+  },
+  {
+    "package_id": "05",
+    "title": "Live BBQ package ",
+    "img": "https://i.ibb.co/Q6DjTd9/Live-BBQ.jpg",
+    "price": "1000",
+    "description": " Make a day more than a day at La Riveria Resort & Park for live BBQ! La Riveria Resort is designed to provide a unique riverside experience to Dhaka.We are located just 5 min away from Kancon Bridge, Purbachol. The closest resort to Dhaka. Our goal is to provide a place to relax in the city with their family. Our kitchen is equipped with modern amenities that serve exotic continental dishes. Time: 10:00 AM – 6:00 PM Child Policy:(0-5) years old (only food cost if needed) (6-10) years old, BDT 800/- Above 10 years full charge. "
+  },
+  {
+    "package_id": "06",
+    "title": "Wedding package ",
+    "img": "https://i.ibb.co.com/THpsZ7M/Wedding-package.jpg",
+    "price": "1000",
+    "description": " Make a day more than a day at La Riveria Resort & Park for wedding or any kind of event!To aquire this package you need to have at least a group of 1000 people. La Riveria Resort is designed to provide a unique riverside experience to Dhaka.We are located just 5 min away from Kancon Bridge, Purbachol. The closest resort to Dhaka. Our goal is to provide a place to relax in the city with their family. Our kitchen is equipped with modern amenities that serve exotic continental dishes. Time: 10:00 AM – 6:00 PM Child Policy:(0-5) years old (only food cost if needed) (6-10) years old, BDT 500/- Above 10 years full charge. "
+  }
+]

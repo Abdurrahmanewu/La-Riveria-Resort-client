@@ -6,6 +6,7 @@ import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import { FaUserCheck } from "react-icons/fa";
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+  // console.log(user);
   const handleLogout = () => {
     logout()
       .then(() => {})

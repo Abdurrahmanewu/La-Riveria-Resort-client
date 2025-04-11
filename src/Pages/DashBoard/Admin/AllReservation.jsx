@@ -1,7 +1,12 @@
+import DashBoardHeader from "../../Elements/DashBoardHeader/DashBoardHeader";
+
 const AllReservation = () => {
   return (
     <div>
-      <h2>All packages of users</h2>
+      <DashBoardHeader
+        heading={"Finalise Your Reservation"}
+        subHeading={"Select those that you wanted to pay for"}
+      ></DashBoardHeader>
     </div>
   );
 };

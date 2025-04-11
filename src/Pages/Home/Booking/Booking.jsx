@@ -1,22 +1,35 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from "react";
-import img from "../../../assets/features/FormPic.jpg";
+import coverImg from "../../../assets/features/FormPic.jpg";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import useAxios from "../../../Hooks/useAxios";
 
 const Booking = () => {
+  const axiosSecure = useAxios();
+  const cardDetails = useLoaderData();
+  const { title, price, img, description, _id } = cardDetails;
+  // console.log(cardDetails);
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useContext(AuthContext);
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     if (user && user.email) {
-      console.log(data);
+      const bookingItem = {
+        packageId: _id,
+        packageName: title,
+        packaImage: img,
+        packagePrice: price,
+        email: user.email,
+        data: data,
+      };
+      axiosSecure.post("/bookings", bookingItem).then((res) => {
+        console.log(res.data);
+      });
     } else {
       Swal.fire({
         title: "You are not Logged In",
@@ -58,7 +71,7 @@ const Booking = () => {
           {/* Image Section */}
           <div className="image-section">
             <img
-              src={img}
+              src={coverImg}
               alt="Cottage surrounded by nature"
               className="w-full rounded-lg"
             />

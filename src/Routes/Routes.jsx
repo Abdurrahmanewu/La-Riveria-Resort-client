@@ -57,8 +57,10 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
-        path: "/booknow",
+        path: "/booknow/:id",
         element: <BookNow></BookNow>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/packages/${params.id}`),
       },
     ],
   },
