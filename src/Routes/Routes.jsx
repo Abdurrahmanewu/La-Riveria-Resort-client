@@ -11,7 +11,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import BookNow from "../Pages/CheckOut/BookNow/BookNow";
 import DashBoard from "../LayOut/DashBoard";
 import AllReservation from "../Pages/DashBoard/Admin/AllReservation";
-import UserBookings from "../Pages/DashBoard/User/userBookings";
+import UserBookings from "../Pages/DashBoard/User/UserBookings";
 
 export const router = createBrowserRouter([
   {
