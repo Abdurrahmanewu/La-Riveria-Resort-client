@@ -74,6 +74,7 @@ const UserBookings = () => {
 
                               draggable: true,
                             });
+                            refetch();
                           }}
                           className="btn btn-success text-xl"
                         >
