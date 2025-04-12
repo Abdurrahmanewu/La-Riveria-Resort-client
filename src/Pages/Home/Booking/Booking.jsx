@@ -6,6 +6,7 @@ import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import useAxios from "../../../Hooks/useAxios";
+import useBooking from "../../../Hooks/useBooking";
 
 const Booking = () => {
   const axiosSecure = useAxios();
@@ -16,6 +17,7 @@ const Booking = () => {
   const location = useLocation();
   const { user } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
+  const [, refetch] = useBooking();
   const onSubmit = (data) => {
     if (user && user.email) {
       const bookingItem = {
@@ -27,7 +29,17 @@ const Booking = () => {
         data: data,
       };
       axiosSecure.post("/bookings", bookingItem).then((res) => {
-        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${title} added to cart`,
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          refetch();
+          navigate("/dashboard/userbookings");
+        }
       });
     } else {
       Swal.fire({

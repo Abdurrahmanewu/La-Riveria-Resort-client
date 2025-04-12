@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+import useAxios from "../../../Hooks/useAxios";
 import useBooking from "../../../Hooks/useBooking";
 import DashBoardHeader from "../../Elements/DashBoardHeader/DashBoardHeader";
 import { FaTrashAlt } from "react-icons/fa";
@@ -6,6 +6,32 @@ import Swal from "sweetalert2";
 
 const UserBookings = () => {
   const [bookings, refetch] = useBooking();
+  const axiosSecure = useAxios();
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/bookings/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your reservation has been deleted.",
+              icon: "success",
+            });
+            refetch();
+          }
+        });
+      }
+    });
+  };
   return (
     <div>
       <DashBoardHeader
@@ -35,7 +61,7 @@ const UserBookings = () => {
               {/* row 1 */}
               {bookings.map(
                 (item, index) => (
-                  console.log(item.data),
+                  console.log(item),
                   (
                     <tr key={item._id}>
                       <th className="text-xl text-black font-bold">
@@ -74,7 +100,6 @@ const UserBookings = () => {
 
                               draggable: true,
                             });
-                            refetch();
                           }}
                           className="btn btn-success text-xl"
                         >
