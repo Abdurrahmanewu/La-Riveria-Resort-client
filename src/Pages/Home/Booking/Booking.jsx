@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
 import useAxios from "../../../Hooks/useAxios";
 
 const Booking = () => {
@@ -134,10 +133,10 @@ const Booking = () => {
             </select>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <select
-                name="cottage type"
+                name="cottageType"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
-                {...register("cottage type")}
+                {...register("cottageTtype")}
               >
                 <option value="">Select Cottage Type</option>
                 <option value="River view Cottages">River view Cottages</option>
@@ -146,11 +145,11 @@ const Booking = () => {
               </select>
               <input
                 type="number"
-                name="guests number"
+                name="guestsNumber"
                 placeholder="Number of Guests"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
-                {...register("guests number")}
+                {...register("guestsNumber")}
               />
             </div>
 
@@ -165,10 +164,10 @@ const Booking = () => {
                 <input
                   id="checkin"
                   type="date"
-                  name="checkin date"
+                  name="checkinDate"
                   required
                   className="p-3 pt-6 border border-gray-300 rounded-lg w-full"
-                  {...register("checkin date")}
+                  {...register("checkinDate")}
                 />
               </div>
               <div className="relative">
@@ -181,10 +180,10 @@ const Booking = () => {
                 <input
                   id="checkout"
                   type="date"
-                  name="checkout date"
+                  name="checkoutDate"
                   required
                   className="p-3 pt-6 border border-gray-300 rounded-lg w-full"
-                  {...register("checkout date")}
+                  {...register("checkoutDate")}
                 />
               </div>
             </div>

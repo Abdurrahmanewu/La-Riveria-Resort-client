@@ -11,6 +11,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import BookNow from "../Pages/CheckOut/BookNow/BookNow";
 import DashBoard from "../LayOut/DashBoard";
 import AllReservation from "../Pages/DashBoard/Admin/AllReservation";
+import UserBookings from "../Pages/DashBoard/User/userBookings";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
       {
         path: "allreservation",
         element: <AllReservation></AllReservation>,
+      },
+      {
+        path: "userbookings",
+        element: <UserBookings></UserBookings>,
       },
     ],
   },

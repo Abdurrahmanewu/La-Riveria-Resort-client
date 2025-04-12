@@ -1,11 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 
 import logo from "../../../assets/Logo/logo_La_Riveria-removebg-preview.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import { FaUserCheck } from "react-icons/fa";
+import useBooking from "../../../Hooks/useBooking";
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+  const [bookings] = useBooking();
+  // console.log(bookings);
+
   // console.log(user);
   const handleLogout = () => {
     logout()

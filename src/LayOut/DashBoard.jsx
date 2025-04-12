@@ -15,7 +15,7 @@ import { TbBuildingCottage } from "react-icons/tb";
 import { NavLink, Outlet } from "react-router-dom";
 
 const DashBoard = () => {
-  const isAdmin = true;
+  const isAdmin = false;
   return (
     <div>
       <div className="flex">
@@ -63,7 +63,7 @@ const DashBoard = () => {
                 <li>
                   <NavLink
                     className="hover:bg-[#b57c4c] hover:text-black transition-colors"
-                    to="/dashboard/bookings"
+                    to="/dashboard/userbookings"
                   >
                     <FaList></FaList>
                     My Bookings
@@ -75,10 +75,10 @@ const DashBoard = () => {
                 <li>
                   <NavLink
                     className="hover:bg-[#b57c4c] hover:text-black transition-colors"
-                    to="/dashboard/userHome"
+                    to="/dashboard/userbookings"
                   >
-                    <FaHome></FaHome>
-                    User Home
+                    <FaShoppingCart></FaShoppingCart>
+                    My cart
                   </NavLink>
                 </li>
                 <li>
@@ -87,16 +87,7 @@ const DashBoard = () => {
                     to="/dashboard/reservation"
                   >
                     <FaCalendar></FaCalendar>
-                    Reservation
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    className="hover:bg-[#b57c4c] hover:text-black transition-colors"
-                    to="/dashboard/cart"
-                  >
-                    <FaShoppingCart></FaShoppingCart>
-                    My cart
+                    My Reservation
                   </NavLink>
                 </li>
                 <li>
@@ -106,15 +97,6 @@ const DashBoard = () => {
                   >
                     <FaAd></FaAd>
                     Add a Review
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    className="hover:bg-[#b57c4c] hover:text-black transition-colors"
-                    to="/dashboard/bookings"
-                  >
-                    <FaList></FaList>
-                    My Bookings
                   </NavLink>
                 </li>
               </>
