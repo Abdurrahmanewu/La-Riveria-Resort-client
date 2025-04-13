@@ -6,7 +6,12 @@ import Swal from "sweetalert2";
 
 const Reser = () => {
   const [bookings, refetch] = useBooking();
+
   const axiosSecure = useAxios();
+  const totalPrice = bookings.reduce(
+    (total, item) => total + item.packagePrice,
+    0
+  );
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -43,10 +48,12 @@ const Reser = () => {
       {/* Reservation Summary */}
       <div className="flex flex-col justify-evenly md:flex-row  items-center gap-4 mb-6">
         <h2 className="text-lg md:text-2xl font-semibold">
-          🧾 Items: {bookings.length}
+          🏡 Total reservations: {bookings.length}
         </h2>
         <h2 className="text-lg md:text-2xl font-semibold">
-          💵 Total Price: {/* Add total calc here */}
+          💵 Total Price
+          <span className="text-4xl font-bold text-black">৳</span>:{totalPrice}
+          {/* Add total calc here */}
         </h2>
         <button className="btn btn-primary w-4/5 md:w-auto text-lg">
           Pay Now
@@ -67,22 +74,25 @@ const Reser = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((item, index) => (
-              <tr key={item._id}>
-                <td>{index + 1}</td>
-                <td>
-                  <img
-                    src={item.packaImage}
-                    className="w-20 h-20 object-cover rounded"
-                  />
-                </td>
-                <td>{item.packageName}</td>
-                <td>
-                  <button
-                    onClick={() =>
-                      Swal.fire({
-                        title: item.packageName,
-                        html: `
+            {bookings.map(
+              (item, index) => (
+                console.log(item.packagePrice),
+                (
+                  <tr key={item._id}>
+                    <td>{index + 1}</td>
+                    <td>
+                      <img
+                        src={item.packaImage}
+                        className="w-20 h-20 object-cover rounded"
+                      />
+                    </td>
+                    <td>{item.packageName}</td>
+                    <td>
+                      <button
+                        onClick={() =>
+                          Swal.fire({
+                            title: item.packageName,
+                            html: `
                           <strong>Guest:</strong> ${item.data.name}<br/>
                           <strong>Check-in:</strong> ${item.data.checkinDate}<br/>
                           <strong>Check-out:</strong> ${item.data.checkoutDate}<br/>
@@ -92,24 +102,26 @@ const Reser = () => {
                           <strong>Email:</strong> ${item.data.email}<br/>
                           <strong>Request:</strong> ${item.data.specialRequest}
                         `,
-                      })
-                    }
-                    className="btn btn-sm btn-outline btn-success"
-                  >
-                    Details
-                  </button>
-                </td>
-                <td>${item.packagePrice}</td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(item._id)}
-                    className="btn btn-ghost btn-md"
-                  >
-                    <FaTrashAlt className="text-red-600" />
-                  </button>
-                </td>
-              </tr>
-            ))}
+                          })
+                        }
+                        className="btn btn-sm btn-outline btn-success"
+                      >
+                        Details
+                      </button>
+                    </td>
+                    <td>${item.packagePrice}</td>
+                    <td>
+                      <button
+                        onClick={() => handleDelete(item._id)}
+                        className="btn btn-ghost btn-md"
+                      >
+                        <FaTrashAlt className="text-red-600" />
+                      </button>
+                    </td>
+                  </tr>
+                )
+              )
+            )}
           </tbody>
         </table>
       </div>
