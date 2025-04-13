@@ -4,7 +4,7 @@ const usePacakges = () => {
   const [packages, setPackages] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5001/packages")
+    fetch("https://lariveria-resort-server.vercel.app/packages")
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
