@@ -13,7 +13,7 @@ import DashBoard from "../LayOut/DashBoard";
 import AllReservation from "../Pages/DashBoard/Admin/AllReservation";
 import UserBookings from "../Pages/DashBoard/User/UserBookings";
 import Dash from "../Pages/Practice/Dash";
-import Reservation from "../Pages/Practice/reservation";
+import Reser from "../Pages/Practice/Reser";
 
 export const router = createBrowserRouter([
   {
@@ -85,7 +85,7 @@ export const router = createBrowserRouter([
     path: "/dashboard2",
     element: <Dash></Dash>,
     children: [
-      { path: "reservations", element: <Reservation></Reservation> },
+      { path: "reservations", element: <Reser></Reser> },
       {
         path: "allusers",
         element: <AllReservation></AllReservation>,
