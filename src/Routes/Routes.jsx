@@ -12,6 +12,8 @@ import BookNow from "../Pages/CheckOut/BookNow/BookNow";
 import DashBoard from "../LayOut/DashBoard";
 import AllReservation from "../Pages/DashBoard/Admin/AllReservation";
 import UserBookings from "../Pages/DashBoard/User/UserBookings";
+import Dash from "../Pages/Practice/Dash";
+import Reservation from "../Pages/Practice/reservation";
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +78,17 @@ export const router = createBrowserRouter([
       {
         path: "userbookings",
         element: <UserBookings></UserBookings>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard2",
+    element: <Dash></Dash>,
+    children: [
+      { path: "reservations", element: <Reservation></Reservation> },
+      {
+        path: "allusers",
+        element: <AllReservation></AllReservation>,
       },
     ],
   },
