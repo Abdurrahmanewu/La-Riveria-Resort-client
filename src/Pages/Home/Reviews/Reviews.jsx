@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ReviewCard from "./ReviewCard";
@@ -5,14 +6,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Navigation } from "swiper/modules";
 import "./Reviews.css";
+import useReviews from "../../../Hooks/useReviews";
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
-  useEffect(() => {
-    fetch("/reviews.json")
-      .then((res) => res.json())
-      .then((data) => setReviews(data));
-  }, []);
+  const [reviews] = useReviews();
+  console.log(reviews);
+  // const [reviews, setReviews] = useState([]);
+  // useEffect(() => {
+  //   fetch("/reviews.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setReviews(data));
+  // }, []);
   // console.log(reviews);
   return (
     <div className="mx-auto m-20 max-w-screen-xl review-bg-img bg-fixed relative h-[60vh] bg-cover bg-center">

@@ -8,7 +8,7 @@ const AddReview = () => {
   };
   return (
     <div className="container mx-auto max-w-screen-xl">
-      <h2 className="text-center text-5xl font-bold font-serif text-[#d89b62] pb-5">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold  mb-6 sm:mb-8 font-serif text-[#d89b62] text-center ">
         Drop us a review
       </h2>
       <div className="flex flex-col lg:flex-row bg-[#f9f9f1] p-6">
@@ -72,11 +72,19 @@ const AddReview = () => {
                 {...register("email")}
               />
             </div>
+            <input
+              type="text"
+              name="designation"
+              placeholder="Designation"
+              required
+              className="p-3 border border-gray-300 rounded-lg"
+              {...register("designation")}
+            />
             <textarea
-              name="addReview"
+              name="feedback"
               placeholder="Add your precious review here..."
-              className="p-3 border border-gray-300 rounded-lg lg:h-[35vh]"
-              {...register("addReview")}
+              className="p-3 border border-gray-300 rounded-lg lg:h-[30vh]"
+              {...register("feedback")}
             ></textarea>
             <button
               type="submit"
