@@ -19,7 +19,7 @@ const SignUp = () => {
     createUser(data.email, data.password).then((result) => {
       const loggedInUser = result.user;
       console.log(loggedInUser);
-      if(loggedInUser){
+      if (loggedInUser) {
         Swal.fire({
           icon: "success",
           title: "SignUp Successful",
@@ -29,7 +29,7 @@ const SignUp = () => {
       }
     });
   };
-  
+
   return (
     <div className="container mx-auto max-w-screen-xl">
       <div className="flex justify-center items-center my-4">
@@ -46,13 +46,14 @@ const SignUp = () => {
           {/* Text Section */}
           <div className="text-section mb-6 lg:mb-auto">
             <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4">
-              Plan Your Escape to Nature- <br />
-              SignUp
+              Plan Your Escape to Nature
             </h1>
-            <p className="text-gray-600 text-base lg:text-lg">
-              Suspendisse condimentum mauris sem, id placerat massa posuere sit
-              amet. Sed nisi nunc, fermentum sed iaculis eget, congue eget orci.
-              Nam quis erat pharetra odio tincidunt laoreet nec eu mi.
+            <p className="text-black text-base lg:text-lg">
+              Plan your escape to nature at La Riveria Resort & Park, where
+              tranquility meets adventure. Nestled beside a serene river and
+              lush greenery, our resort offers the perfect getaway from the
+              chaos of everyday life. Reconnect with nature, unwind in comfort,
+              and create unforgettable memories at La Riveria.
             </p>
           </div>
 

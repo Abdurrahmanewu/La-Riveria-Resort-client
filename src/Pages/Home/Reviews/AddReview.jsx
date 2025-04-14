@@ -3,7 +3,9 @@ import coverImg from "../../../assets/features/FormPic.jpg";
 
 const AddReview = () => {
   const { register, handleSubmit } = useForm();
-
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div className="container mx-auto max-w-screen-xl">
       <h2 className="text-center text-5xl font-bold font-serif text-[#d89b62] pb-5">
@@ -15,7 +17,7 @@ const AddReview = () => {
           {/* Text Section */}
           <div className="text-section mb-6 lg:mb-auto">
             <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4">
-              Help us improve with your feedback
+              Help us to improve with your feedback
             </h1>
             <p className="text-xl lg:text-2xl font-bold text-gray-800 mb-4">
               (Before droping a review, makesure to SignUp or Login first)
@@ -40,7 +42,10 @@ const AddReview = () => {
 
         {/* Right Section */}
         <div className="flex-1 form-section bg-[#a1bd94] p-6 rounded-lg mt-6 lg:mt-0">
-          <form onSubmit={handleSubmit()} className="flex flex-col space-y-4">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col space-y-4"
+          >
             <input
               type="text"
               name="name"

@@ -11,15 +11,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../SocialLogin/SocialLogin";
-// import { use } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const [disable, setDisable] = useState(true);
-  const { login, user } = useContext(AuthContext);
-  // console.log(user);
+  const { login } = useContext(AuthContext);
+
   useEffect(() => {
     loadCaptchaEnginge();
   }, []);
@@ -77,13 +76,14 @@ const Login = () => {
           {/* Text Section */}
           <div className="text-section mb-6 lg:mb-auto">
             <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4">
-              Plan Your Escape to Nature- <br />
-              Login Now
+              Plan Your Escape to Nature
             </h1>
-            <p className="text-gray-600 text-base lg:text-lg">
-              Suspendisse condimentum mauris sem, id placerat massa posuere sit
-              amet. Sed nisi nunc, fermentum sed iaculis eget, congue eget orci.
-              Nam quis erat pharetra odio tincidunt laoreet nec eu mi.
+            <p className="text-black text-base lg:text-lg">
+              Plan your escape to nature at La Riveria Resort & Park, where
+              tranquility meets adventure. Nestled beside a serene river and
+              lush greenery, our resort offers the perfect getaway from the
+              chaos of everyday life. Reconnect with nature, unwind in comfort,
+              and create unforgettable memories at La Riveria.
             </p>
           </div>
 
@@ -135,7 +135,7 @@ const Login = () => {
               className="p-3 bg-[#d89b62] text-xl text-white font-bold rounded-lg hover:bg-[#b57c4c]"
               type="submit"
               value="Login"
-              // disabled={disable}
+              disabled={disable}
             />
           </form>
           <p className=" text-center p-2">
