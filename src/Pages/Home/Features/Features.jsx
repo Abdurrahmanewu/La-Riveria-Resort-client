@@ -5,7 +5,7 @@ const Features = () => {
   return (
     <div className="mb-16 sm:mb-16 md:mb-20 lg:mb-24 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
       <h2 className="text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-10">
-        Lets Explore <br /> La Riveria Resort & Park
+        Let&apos;s Explore <br /> La Riveria Resort & Park
       </h2>
 
       <section className="space-y-20 lg:space-y-32">

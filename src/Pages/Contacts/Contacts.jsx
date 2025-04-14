@@ -1,6 +1,6 @@
 import { PhoneCall } from "lucide-react";
 import logo from "../../assets/Logo/logo_La_Riveria-removebg-preview.png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const Contacts = () => {
   return (
     <div className="flex flex-col items-center justify-center px-6 py-20 md:py-28 lg:py-32 bg-blue-50">
@@ -28,7 +28,7 @@ const Contacts = () => {
       <div>
         <img src={logo} alt="" />
       </div>
-      <div>
+      {/* <div>
         <div>
           <div className="dropdown dropdown-end">
             <div
@@ -58,7 +58,7 @@ const Contacts = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

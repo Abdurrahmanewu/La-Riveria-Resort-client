@@ -1,14 +1,18 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
-      <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+    <footer className="footer footer-center bg-[#0d462b] text-white rounded p-10">
+      <nav className="grid gap-4 sm:grid-flow-col sm:gap-20 text-center sm:text-left text-base sm:text-lg md:text-xl lg:text-2xl">
+        <Link to="/about" className="link link-hover">
+          About us
+        </Link>
+        <Link to="/contacts" className="link link-hover">
+          Contact
+        </Link>
       </nav>
       <nav>
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid grid-flow-col gap-10">
           <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +49,9 @@ const Footer = () => {
         </div>
       </nav>
       <aside>
-        <p>
-          Copyright © {new Date().getFullYear()} - All right reserved by ACME
-          Industries Ltd
+        <p className="text-center sm:text-left text-base sm:text-lg md:text-xl lg:text-2xl">
+          Copyright © {new Date().getFullYear()} - All right reserved by La
+          Riveria Resort & Park
         </p>
       </aside>
     </footer>
