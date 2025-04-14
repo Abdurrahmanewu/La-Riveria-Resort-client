@@ -10,14 +10,6 @@ import useReviews from "../../../Hooks/useReviews";
 
 const Reviews = () => {
   const [reviews] = useReviews();
-  console.log(reviews);
-  // const [reviews, setReviews] = useState([]);
-  // useEffect(() => {
-  //   fetch("/reviews.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setReviews(data));
-  // }, []);
-  // console.log(reviews);
   return (
     <div className="mx-auto m-20 max-w-screen-xl review-bg-img bg-fixed relative h-[60vh] bg-cover bg-center">
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>

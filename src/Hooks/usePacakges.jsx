@@ -1,18 +1,17 @@
-import { useEffect, useState } from "react";
+import useAxios from "./useAxios";
+import { useQuery } from "@tanstack/react-query";
 
 const usePacakges = () => {
-  const [packages, setPackages] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    fetch("https://lariveria-resort-server.vercel.app/packages")
-      .then((res) => res.json())
-      .then((data) => {
-        setPackages(data);
-        setLoading(false);
-      });
-  }, []);
+  const axiosSecure = useAxios();
+  const { refetch, data: packages = [] } = useQuery({
+    queryKey: ["packages"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/packages");
+      return res.data;
+    },
+  });
 
-  return [packages, loading];
+  return [packages, refetch];
 };
 
 export default usePacakges;

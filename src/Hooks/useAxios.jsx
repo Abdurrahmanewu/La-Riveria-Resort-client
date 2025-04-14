@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export const axiosSecure = axios.create({
   baseURL: "https://lariveria-resort-server.vercel.app/",
 });
