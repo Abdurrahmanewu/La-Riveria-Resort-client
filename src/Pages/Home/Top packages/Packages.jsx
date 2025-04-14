@@ -15,7 +15,7 @@ const Packages = () => {
           Our Top Packages
         </h2>
       </div>
-      <div className="mx-auto max-w-screen-xl mt-10">
+      <div className="mx-auto max-w-screen-xl mt-4 sm:mt-6 md:mt-8 lg:mt-10">
         <Swiper
           // slidesPerView={3}
           spaceBetween={20}

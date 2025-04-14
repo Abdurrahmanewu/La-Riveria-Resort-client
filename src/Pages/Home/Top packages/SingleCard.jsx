@@ -37,8 +37,8 @@ const SingleCard = ({ card }) => {
   return (
     <div className="">
       <div
-        className="card bg-base-100 shadow-xl 
-                      sm:w-full md:w-80 lg:w-96 
+        className="card bg-base-100 shadow-xl mx-auto
+                      w-[90vw] sm:w-[80vw] md:w-80 lg:w-96 
                       sm:mx-auto md:mx-4 lg:mx-6"
       >
         <figure>
