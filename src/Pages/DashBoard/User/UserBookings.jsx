@@ -52,7 +52,11 @@ const UserBookings = () => {
         </h2>
         <h2 className="text-lg md:text-2xl font-semibold">
           💵 Total Price
-          <span className="text-4xl font-bold text-black">৳</span>:{totalPrice}
+          <span className=" font-bold text-black sm:text-4xl lg: text-2xl">
+            ৳
+          </span>
+          :{""}
+          {totalPrice}
           {/* Add total calc here */}
         </h2>
         <button className="btn btn-primary w-4/5 md:w-auto text-lg">
@@ -153,7 +157,7 @@ const UserBookings = () => {
               <p>📧 {item.data.email}</p>
               {item.data.specialRequest && <p>✍️ {item.data.specialRequest}</p>}
               <p className="font-bold text-lg text-green-600">
-                💰 ${item.packagePrice}
+                💰 ৳{item.packagePrice}
               </p>
             </div>
             <div className="flex justify-end gap-3">
