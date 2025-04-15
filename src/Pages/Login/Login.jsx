@@ -20,7 +20,7 @@ const Login = () => {
   const { login } = useContext(AuthContext);
 
   useEffect(() => {
-    loadCaptchaEnginge();
+    loadCaptchaEnginge(4);
   }, []);
   const handleLogin = (event) => {
     event.preventDefault();
@@ -56,7 +56,11 @@ const Login = () => {
       setDisable(false);
     } else {
       setDisable(true);
-      alert("Captcha is wrong");
+      Swal.fire({
+        icon: "error",
+        title: "wrong captcha",
+        text: "Please try again",
+      });
     }
   };
 
@@ -126,7 +130,7 @@ const Login = () => {
                 type="text"
                 name="captcha"
                 placeholder="type text above"
-                // required
+                required
                 className="p-3 border border-gray-300 rounded-lg"
               />
             </div>
