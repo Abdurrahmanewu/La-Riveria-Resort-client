@@ -8,7 +8,6 @@ import usePacakges from "../../../Hooks/usePacakges";
 
 const Packages = () => {
   const [packages] = usePacakges();
-  console.log(packages);
   return (
     <div className="package-bg-img bg-fixed h-[80vh]">
       <div className="text-center">

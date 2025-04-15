@@ -1,10 +1,59 @@
+/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import coverImg from "../../../assets/features/FormPic.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import useAxios from "../../../Hooks/useAxios";
+import useReviews from "../../../Hooks/useReviews";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AddReview = () => {
-  const { register, handleSubmit } = useForm();
+  const axiosSecure = useAxios();
+  const { user } = useContext(AuthContext);
+  const { register, handleSubmit, reset } = useForm();
+  const [, refetch] = useReviews();
+  const navigate = useNavigate();
+  const location = useLocation();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+    const { name, phone, email, designation, feedback } = data;
+    if (user && user.email) {
+      const reviewItem = {
+        name: name,
+        phone: phone,
+        email: email,
+        designation: designation,
+        feedback: feedback,
+      };
+      axiosSecure.post("/reviews", reviewItem).then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your review has been added successfully",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          reset();
+          refetch();
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "You are not Logged In",
+        text: "Please login to add to the cart",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, login",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
   };
   return (
     <div className="container mx-auto max-w-screen-xl">

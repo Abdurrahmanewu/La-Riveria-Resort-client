@@ -16,7 +16,7 @@ const Booking = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useContext(AuthContext);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [, refetch] = useBooking();
   const onSubmit = (data) => {
     if (user && user.email) {
@@ -37,6 +37,7 @@ const Booking = () => {
             showConfirmButton: false,
             timer: 2500,
           });
+          reset();
           refetch();
           navigate("/dashboard/userbookings");
         }
@@ -52,7 +53,6 @@ const Booking = () => {
         confirmButtonText: "Yes, login",
       }).then((result) => {
         if (result.isConfirmed) {
-          //   send the user to the login page
           navigate("/login", { state: { from: location } });
         }
       });

@@ -20,10 +20,11 @@ const Features = () => {
           </div>
           <div className="flex flex-col justify-center lg:w-1/2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-              Riverview Wooden Cottage
+              Riverview wooden cottage
             </h2>
             <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400">
-              Enjoy your holiday in our gorgeous wooden cottage with river view.
+              Relax and unwind in our cozy wooden cottage with breathtaking
+              river views — your perfect getaway starts here.
             </p>
           </div>
         </div>
@@ -39,11 +40,11 @@ const Features = () => {
           </div>
           <div className="flex flex-col justify-center lg:w-1/2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-              Riverside Pool with Horizontal River View
+              Riverside pool with a perfect river view
             </h2>
             <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400">
-              Have a parallel view of river while swimming in our pool. It will
-              give you a feel of swimming in the river.
+              Swim alongside the serene river in our stunning riverside pool —
+              designed to give you the feeling of floating with the flow.
             </p>
           </div>
         </div>
@@ -59,10 +60,11 @@ const Features = () => {
           </div>
           <div className="flex flex-col justify-center lg:w-1/2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-              Open Dining Space with River View
+              Open dining space with river view
             </h2>
             <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400">
-              Enjoy your holiday in our gorgeous wooden cottage with river view.
+              Enjoy a delicious meal in our open dining area with calming views
+              of the river — the perfect blend of taste and tranquility.
             </p>
           </div>
         </div>

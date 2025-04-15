@@ -1,12 +1,10 @@
-/* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ReviewCard from "./ReviewCard";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Navigation } from "swiper/modules";
 import "./Reviews.css";
 import useReviews from "../../../Hooks/useReviews";
+import ReviewBox from "./ReviewBox";
 
 const Reviews = () => {
   const [reviews] = useReviews();
@@ -44,7 +42,7 @@ const Reviews = () => {
           <div>
             {reviews.map((card, index) => (
               <SwiperSlide key={index}>
-                <ReviewCard card={card}></ReviewCard>
+                <ReviewBox card={card}></ReviewBox>
               </SwiperSlide>
             ))}
           </div>
