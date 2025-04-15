@@ -139,7 +139,7 @@ const AddReview = () => {
               type="submit"
               className="p-3 bg-[#d89b62] text-white font-bold rounded-lg hover:bg-[#b57c4c]"
             >
-              Book Your Stay!
+              Add your review!
             </button>
           </form>
         </div>
