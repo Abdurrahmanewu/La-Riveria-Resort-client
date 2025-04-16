@@ -14,6 +14,7 @@ import AllReservation from "../Pages/DashBoard/Admin/AllReservation";
 import UserBookings from "../Pages/DashBoard/User/UserBookings";
 import Dash from "../Pages/Practice/Dash";
 import Reser from "../Pages/Practice/Reser";
+import UserReview from "../Pages/Home/Reviews/UserReview";
 
 export const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ export const router = createBrowserRouter([
         path: "userbookings",
         element: <UserBookings></UserBookings>,
       },
+      {
+        path:'userreviews',
+        element:<UserReview></UserReview>
+      }
     ],
   },
   {

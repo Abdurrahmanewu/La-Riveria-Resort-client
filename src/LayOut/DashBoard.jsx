@@ -100,10 +100,11 @@ const DashBoard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboard/review"
+                  to="/dashboard/userreviews"
                   className="hover:bg-[#b57c4c] hover:text-black transition-colors"
                 >
-                  <FaAd /> Add a Review
+                  <FaAd />
+                  My Reviews
                 </NavLink>
               </li>
             </>
