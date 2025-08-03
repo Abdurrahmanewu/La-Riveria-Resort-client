@@ -15,7 +15,9 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
 
 const DashBoard = () => {
-  const isAdmin = false;
+  const isAdmin = false; // Replace with actual admin check logic
+  // const { isAdmin } = useContext(AuthContext); // Uncomment if using context for admin status
+  // const axiosSecure = useAxios(); // Uncomment if using axios for secure requests
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div className="h-screen md:flex">

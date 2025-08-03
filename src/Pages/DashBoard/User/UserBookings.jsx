@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useAxios from "../../../Hooks/useAxios";
 import useBooking from "../../../Hooks/useBooking";
 import DashBoardHeader from "../../Elements/DashBoardHeader/DashBoardHeader";
@@ -59,8 +60,14 @@ const UserBookings = () => {
           {totalPrice}
           {/* Add total calc here */}
         </h2>
-        <button className="btn btn-primary w-4/5 md:w-auto text-lg">
-          Pay Now
+
+        <button>
+          <Link
+            to="/dashboard/userpayment"
+            className="btn btn-primary w-4/5 md:w-auto text-lg"
+          >
+            Pay Now
+          </Link>
         </button>
       </div>
 

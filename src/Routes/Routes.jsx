@@ -15,6 +15,7 @@ import UserBookings from "../Pages/DashBoard/User/UserBookings";
 import Dash from "../Pages/Practice/Dash";
 import Reser from "../Pages/Practice/Reser";
 import UserReview from "../Pages/Home/Reviews/UserReview";
+import UserPayment from "../Pages/Payments/UserPayment/UserPayment";
 
 export const router = createBrowserRouter([
   {
@@ -85,9 +86,13 @@ export const router = createBrowserRouter([
         element: <UserBookings></UserBookings>,
       },
       {
-        path:'userreviews',
-        element:<UserReview></UserReview>
-      }
+        path: "userreviews",
+        element: <UserReview></UserReview>,
+      },
+      {
+        path: "userpayment",
+        element: <UserPayment></UserPayment>,
+      },
     ],
   },
   {
