@@ -94,7 +94,7 @@ const DashBoard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboard/reservation"
+                  to="/dashboard/userreservation"
                   className="hover:bg-[#b57c4c] hover:text-black transition-colors"
                 >
                   <FaCalendar /> My Reservation

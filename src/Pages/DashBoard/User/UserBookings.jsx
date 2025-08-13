@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAxios from "../../../Hooks/useAxios";
 import useBooking from "../../../Hooks/useBooking";
 import DashBoardHeader from "../../Elements/DashBoardHeader/DashBoardHeader";
@@ -7,12 +7,26 @@ import Swal from "sweetalert2";
 
 const UserBookings = () => {
   const [bookings, refetch] = useBooking();
+  // console.log(bookings);
 
   const axiosSecure = useAxios();
+  const navigate = useNavigate();
   const totalPrice = bookings.reduce(
-    (total, item) => total + item.packagePrice,
+    (total, item) => total + (item.packagePrice || 0),
     0
   );
+
+  const handlePayNow = () => {
+    if (bookings.length === 0) {
+      Swal.fire({
+        icon: "info",
+        title: "Empty Reservation",
+        text: "There is no reservation to pay for.",
+      });
+    } else {
+      navigate("/dashboard/userpayment");
+    }
+  };
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -46,7 +60,7 @@ const UserBookings = () => {
         subHeading="Select those that you wanted to pay for"
       />
 
-      {/* Reservation Summary */}
+      {/* Reservation  */}
       <div className="flex flex-col justify-evenly md:flex-row  items-center gap-4 mb-6">
         <h2 className="text-lg md:text-2xl font-semibold">
           🏡 Total reservations: {bookings.length}
@@ -61,13 +75,11 @@ const UserBookings = () => {
           {/* Add total calc here */}
         </h2>
 
-        <button>
-          <Link
-            to="/dashboard/userpayment"
-            className="btn btn-primary w-4/5 md:w-auto text-lg"
-          >
-            Pay Now
-          </Link>
+        <button
+          className="btn btn-primary w-4/5 md:w-auto text-lg"
+          onClick={handlePayNow}
+        >
+          Pay Now
         </button>
       </div>
 
@@ -85,25 +97,23 @@ const UserBookings = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map(
-              (item, index) => (
-                console.log(item.packagePrice),
-                (
-                  <tr key={item._id}>
-                    <td>{index + 1}</td>
-                    <td>
-                      <img
-                        src={item.packaImage}
-                        className="w-20 h-20 object-cover rounded"
-                      />
-                    </td>
-                    <td>{item.packageName}</td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          Swal.fire({
-                            title: item.packageName,
-                            html: `
+            {bookings.map((item, index) => (
+              // console.log(item.packagePrice),
+              <tr key={item._id}>
+                <td>{index + 1}</td>
+                <td>
+                  <img
+                    src={item.packaImage}
+                    className="w-20 h-20 object-cover rounded"
+                  />
+                </td>
+                <td>{item.packageName}</td>
+                <td>
+                  <button
+                    onClick={() =>
+                      Swal.fire({
+                        title: item.packageName,
+                        html: `
                           <strong>Guest:</strong> ${item.data.name}<br/>
                           <strong>Check-in:</strong> ${item.data.checkinDate}<br/>
                           <strong>Check-out:</strong> ${item.data.checkoutDate}<br/>
@@ -113,26 +123,24 @@ const UserBookings = () => {
                           <strong>Email:</strong> ${item.data.email}<br/>
                           <strong>Request:</strong> ${item.data.specialRequest}
                         `,
-                          })
-                        }
-                        className="btn btn-sm btn-outline btn-success"
-                      >
-                        Details
-                      </button>
-                    </td>
-                    <td>${item.packagePrice}</td>
-                    <td>
-                      <button
-                        onClick={() => handleDelete(item._id)}
-                        className="btn btn-ghost btn-md"
-                      >
-                        <FaTrashAlt className="text-red-600" />
-                      </button>
-                    </td>
-                  </tr>
-                )
-              )
-            )}
+                      })
+                    }
+                    className="btn btn-sm btn-outline btn-success"
+                  >
+                    Details
+                  </button>
+                </td>
+                <td>${item.packagePrice}</td>
+                <td>
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    className="btn btn-ghost btn-md"
+                  >
+                    <FaTrashAlt className="text-red-600" />
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

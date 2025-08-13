@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import coverImg from "../../../assets/features/FormPic.jpg";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
@@ -12,12 +12,20 @@ const Booking = () => {
   const axiosSecure = useAxios();
   const cardDetails = useLoaderData();
   const { title, price, img, description, _id } = cardDetails;
-  // console.log(cardDetails);
+  console.log(cardDetails);
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useContext(AuthContext);
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: { email: user?.email || "" },
+  });
   const [, refetch] = useBooking();
+
+  useEffect(() => {
+    if (user?.email) {
+      reset((prev) => ({ ...prev, email: user.email }));
+    }
+  }, [user, reset]);
   const onSubmit = (data) => {
     if (user && user.email) {
       const bookingItem = {
@@ -115,7 +123,7 @@ const Booking = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                readOnly
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 {...register("email")}

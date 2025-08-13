@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import coverImg from "../../../assets/features/FormPic.jpg";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import useAxios from "../../../Hooks/useAxios";
 import useReviews from "../../../Hooks/useReviews";
@@ -11,10 +11,19 @@ import { useLocation, useNavigate } from "react-router-dom";
 const AddReview = () => {
   const axiosSecure = useAxios();
   const { user } = useContext(AuthContext);
-  const { register, handleSubmit, reset } = useForm();
+  // console.log(user?.email);
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: { email: user?.email || "" },
+  });
   const [, refetch] = useReviews();
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    if (user?.email) {
+      reset((prev) => ({ ...prev, email: user.email }));
+    }
+  }, [user, reset]);
   const onSubmit = (data) => {
     // console.log(data);
     const { name, phone, email, designation, feedback } = data;
@@ -115,7 +124,7 @@ const AddReview = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                readOnly
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 {...register("email")}

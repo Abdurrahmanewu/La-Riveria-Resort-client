@@ -16,6 +16,9 @@ import Dash from "../Pages/Practice/Dash";
 import Reser from "../Pages/Practice/Reser";
 import UserReview from "../Pages/Home/Reviews/UserReview";
 import UserPayment from "../Pages/Payments/UserPayment/UserPayment";
+import PaymentSuccess from "../Pages/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../Pages/PaymentFail/PaymentFail";
+import UserReservation from "../Pages/DashBoard/User/UserReservation";
 
 export const router = createBrowserRouter([
   {
@@ -46,9 +49,7 @@ export const router = createBrowserRouter([
         path: "/singleCardDetails/:id",
         element: <SingleCardDetails></SingleCardDetails>,
         loader: ({ params }) =>
-          fetch(
-            `https://lariveria-resort-server.vercel.app/packages/${params.id}`
-          ),
+          fetch(`http://localhost:5001/packages/${params.id}`),
         // loader: async ({ params }) => {
         //   const response = await fetch("/packages.json");
         //   const data = await response.json();
@@ -67,9 +68,7 @@ export const router = createBrowserRouter([
         path: "/booknow/:id",
         element: <BookNow></BookNow>,
         loader: ({ params }) =>
-          fetch(
-            `https://lariveria-resort-server.vercel.app/packages/${params.id}`
-          ),
+          fetch(`http://localhost:5001/packages/${params.id}`),
       },
     ],
   },
@@ -90,8 +89,20 @@ export const router = createBrowserRouter([
         element: <UserReview></UserReview>,
       },
       {
+        path: "userreservation",
+        element: <UserReservation></UserReservation>,
+      },
+      {
         path: "userpayment",
         element: <UserPayment></UserPayment>,
+      },
+      {
+        path: "payments/success/:tranId",
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+      {
+        path: "payments/fail/:tranId",
+        element: <PaymentFail></PaymentFail>,
       },
     ],
   },
