@@ -8,7 +8,7 @@ import { User as UserIcon } from "lucide-react";
 
 const AllUsers = () => {
   const [users, refetch] = useUsers();
-  console.log(users);
+  // console.log(users);
 
   const [search, setSearch] = useState("");
 
@@ -28,7 +28,6 @@ const AllUsers = () => {
 
       <div className="p-6">
         <h1 className="text-2xl font-bold mb-6">All Users Details</h1>
-
         {/* Searchbar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
           <div className="relative w-full md:w-1/2">
