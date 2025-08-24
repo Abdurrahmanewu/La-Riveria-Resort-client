@@ -25,7 +25,7 @@ const UserPayment = () => {
       mail: data,
     };
 
-    fetch("https://lariveria-resort-server.vercel.app/payments", {
+    fetch("https://la-riveria-resort-server-api.vercel.app/payments", {
       method: "POST",
       headers: {
         "content-type": "application/json",

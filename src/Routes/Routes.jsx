@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
         element: <SingleCardDetails></SingleCardDetails>,
         loader: ({ params }) =>
           fetch(
-            `https://lariveria-resort-server.vercel.app/packages/${params.id}`
+            `https://la-riveria-resort-server-api.vercel.app/packages/${params.id}`
           ),
         // loader: async ({ params }) => {
         //   const response = await fetch("/packages.json");
@@ -74,7 +74,7 @@ export const router = createBrowserRouter([
         element: <BookNow></BookNow>,
         loader: ({ params }) =>
           fetch(
-            `https://lariveria-resort-server.vercel.app/packages/${params.id}`
+            `https://la-riveria-resort-server-api.vercel.app/packages/${params.id}`
           ),
       },
     ],
