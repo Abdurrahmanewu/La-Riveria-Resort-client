@@ -9,10 +9,28 @@ const PaymentFail = () => {
         heading="Payment Status"
         subHeading="Sorry, something went wrong."
       ></DashBoardHeader>
-      <h1 className="text-5xl text-red-600">Payment Failed</h1>
-      <p className="text-lg text-gray-700">
-        Unfortunately, your payment could not be processed. Please try again or
-        contact support for assistance.
+      <h1
+        className=" text-center
+    text-[clamp(1.125rem,2.2vw+0.6rem,2.25rem)]
+    font-semibold tracking-tight leading-tight
+    text-gray-900
+    md:leading-snug
+    text-balance
+  "
+      >
+        Payment Failed
+      </h1>
+      <p
+        className=" text-center
+    text-[clamp(1.125rem,2.2vw+0.6rem,2.25rem)]
+    font-semibold tracking-tight leading-tight
+    text-red-600
+    md:leading-snug
+    text-balance
+  "
+      >
+        Unfortunately, your payment could not be processed.<br></br> Please try
+        again or contact support for assistance.
       </p>
     </div>
   );
