@@ -19,6 +19,9 @@ import UserPayment from "../Pages/Payments/UserPayment/UserPayment";
 import PaymentSuccess from "../Pages/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/PaymentFail/PaymentFail";
 import UserReservation from "../Pages/DashBoard/User/UserReservation";
+import ManageBookings from "../Pages/DashBoard/Admin/ManageBookings";
+import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
+import AllUsers from "../Pages/DashBoard/Admin/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +82,18 @@ export const router = createBrowserRouter([
       {
         path: "allreservation",
         element: <AllReservation></AllReservation>,
+      },
+      {
+        path: "adminhome",
+        element: <AdminHome></AdminHome>,
+      },
+      {
+        path: "managebookings",
+        element: <ManageBookings></ManageBookings>,
+      },
+      {
+        path: "allusers",
+        element: <AllUsers></AllUsers>,
       },
       {
         path: "userbookings",

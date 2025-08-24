@@ -4,7 +4,6 @@ import {
   FaCalendar,
   FaEnvelope,
   FaHome,
-  FaList,
   FaSearch,
   FaShoppingCart,
   FaUsers,
@@ -12,12 +11,13 @@ import {
 } from "react-icons/fa";
 import { TbBuildingCottage } from "react-icons/tb";
 import { NavLink, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 
 const DashBoard = () => {
-  const isAdmin = false; // Replace with actual admin check logic
-  // const { isAdmin } = useContext(AuthContext); // Uncomment if using context for admin status
-  // const axiosSecure = useAxios(); // Uncomment if using axios for secure requests
+  const { user } = useContext(AuthContext);
+  // console.log(user?.email);
+  const isAdmin = user?.email === "admintest@gmail.com";
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div className="h-screen md:flex">
@@ -43,7 +43,7 @@ const DashBoard = () => {
             <>
               <li>
                 <NavLink
-                  to="/dashboard/userHome"
+                  to="/dashboard/adminhome"
                   className="hover:bg-[#b57c4c] hover:text-black transition-colors"
                 >
                   <FaHome /> ADMIN Home
@@ -59,7 +59,7 @@ const DashBoard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboard/cart"
+                  to="/dashboard/managebookings"
                   className="hover:bg-[#b57c4c] hover:text-black transition-colors"
                 >
                   <FaBook /> Manage Bookings
@@ -67,18 +67,10 @@ const DashBoard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboard/users"
+                  to="/dashboard/allusers"
                   className="hover:bg-[#b57c4c] hover:text-black transition-colors"
                 >
                   <FaUsers /> All Users
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/dashboard/userbookings"
-                  className="hover:bg-[#b57c4c] hover:text-black transition-colors"
-                >
-                  <FaList /> My Bookings
                 </NavLink>
               </li>
             </>

@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const UserReservation = () => {
   const [reservations, refetch] = useReservation();
-  console.log(reservations);
+  // console.log(reservations);
   const paidBookings = reservations
     .filter((payment) => payment.paidStatus)
     .flatMap((payment) => payment.paymentData?.bookings || []);
@@ -28,7 +28,7 @@ const UserReservation = () => {
           🏡 Number of reservations : {totalReservations}
         </h2>
         <h2 className="text-lg md:text-2xl font-semibold">
-          💵 Paid for all reservations
+          💵 Paid amount of all reservations {""}
           <span className=" font-bold text-black sm:text-4xl lg: text-2xl">
             ৳
           </span>
@@ -43,6 +43,7 @@ const UserReservation = () => {
           <thead>
             <tr>
               <th>No.</th>
+              <th>Image</th>
               <th>Name</th>
               <th>Order Details</th>
               <th>Price</th>

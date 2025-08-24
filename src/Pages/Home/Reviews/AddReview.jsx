@@ -11,7 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const AddReview = () => {
   const axiosSecure = useAxios();
   const { user } = useContext(AuthContext);
-  // console.log(user?.email);
+  console.log(user);
   const { register, handleSubmit, reset } = useForm({
     defaultValues: { email: user?.email || "" },
   });

@@ -9,10 +9,20 @@ const useReservation = () => {
   const { refetch, data: reservations = [] } = useQuery({
     queryKey: ["reservations", user?.email],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/reservations?email=${user?.email}`);
-      return res.data;
+      //Check if admin
+      if (user?.email === "admintest@gmail.com") {
+        const res = await axiosSecure.get(`/reservations`); // get all
+        return res.data;
+      } else {
+        const res = await axiosSecure.get(
+          `/reservations?email=${user?.email}` // filtered
+        );
+        return res.data;
+      }
     },
+    enabled: !!user?.email, // only run when user is available
   });
+
   return [reservations, refetch];
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/features/FormPic.jpg";
@@ -6,27 +7,68 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import useAxios from "../../Hooks/useAxios";
+import { useQueryClient } from "@tanstack/react-query";
+import useUsers from "../../Hooks/useUsers";
 const SignUp = () => {
+  const axiosSecure = useAxios();
   const navigate = useNavigate();
-  const { createUser } = useContext(AuthContext);
+  const [users, refetch] = useUsers();
+  console.log(users);
+  const { createUser, updateUserProfile, user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
+  const queryClient = useQueryClient();
   const onSubmit = (data) => {
-    console.log(data);
+    const isUserExist = users.some((u) => u.email === data.email);
+    console.log(isUserExist);
+    if (isUserExist) {
+      Swal.fire({
+        icon: "warning",
+        title: "Email Already Registered",
+        text: "This email is already used for signup. Please login instead.",
+      });
+      return;
+    }
+
     createUser(data.email, data.password).then((result) => {
-      const loggedInUser = result.user;
-      console.log(loggedInUser);
-      if (loggedInUser) {
-        Swal.fire({
-          icon: "success",
-          title: "SignUp Successful",
-          text: "Welcome to La Riveria Resort Park",
-        });
-        navigate("/");
-      }
+      const loggedUser = result.user;
+      console.log(loggedUser);
+
+      updateUserProfile(data.name, data.email)
+        .then(() => {
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+
+          axiosSecure.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              console.log("user added to the database");
+              // Refetch users to update the list
+              queryClient.invalidateQueries(["users"]);
+
+              reset();
+              Swal.fire({
+                icon: "success",
+                title: "SignUp Successful",
+                text: "Welcome to La Riveria Resort Park",
+              });
+              navigate("/");
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "SignUp Failed",
+                text: "Something went wrong while saving user!",
+              });
+            }
+          });
+        })
+        .catch((error) => console.log(error));
     });
   };
 
