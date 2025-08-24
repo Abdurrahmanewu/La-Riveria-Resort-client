@@ -7,7 +7,17 @@ const ManageBookings = () => {
         heading={"Final confirmation of bookings"}
         subHeading={"Pass these data to resort management"}
       ></DashBoardHeader>
-      <h1>Place to confirm the reservation</h1>
+      <h2
+        className=" text-center
+    text-[clamp(1.125rem,2.2vw+0.6rem,2.25rem)]
+    font-semibold tracking-tight leading-tight
+    text-gray-900
+    md:leading-snug
+    text-balance
+  "
+      >
+        Place to confirm the reservation
+      </h2>
     </div>
   );
 };
