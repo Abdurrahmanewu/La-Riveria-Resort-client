@@ -25,7 +25,7 @@ const UserPayment = () => {
       mail: data,
     };
 
-    fetch("http://localhost:5001/payments", {
+    fetch("https://lariveria-resort-server.vercel.app/payments", {
       method: "POST",
       headers: {
         "content-type": "application/json",
