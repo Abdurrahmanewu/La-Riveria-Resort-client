@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import useAxios from "../../Hooks/useAxios";
 import { useQueryClient } from "@tanstack/react-query";
 import useUsers from "../../Hooks/useUsers";
+import SocialSignUp from "../SocialSignUp/SocialSignUp";
 const SignUp = () => {
   const axiosSecure = useAxios();
   const navigate = useNavigate();
@@ -182,8 +183,10 @@ const SignUp = () => {
               </Link>
             </small>
           </p>
+          <SocialSignUp></SocialSignUp>
         </div>
       </div>
+      
     </div>
   );
 };
