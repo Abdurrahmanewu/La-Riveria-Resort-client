@@ -142,7 +142,7 @@ const DashBoard = () => {
       )}
 
       {/* Main content */}
-      <div className="flex-1 mt-0 md:mt-0 overflow-auto">
+      <div className="bg-white text-black flex-1 mt-0 md:mt-0 overflow-auto">
         <Outlet />
       </div>
     </div>

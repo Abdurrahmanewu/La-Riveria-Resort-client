@@ -8,7 +8,7 @@ import Packages from "../Top packages/Packages";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-white">
       <Banner></Banner>
       <Features></Features>
       <Packages></Packages>

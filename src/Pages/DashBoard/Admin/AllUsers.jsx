@@ -38,7 +38,7 @@ const AllUsers = () => {
             <input
               type="text"
               placeholder="Search by name or email..."
-              className="w-full pl-10 pr-4 py-2 border rounded-xl focus:ring focus:ring-blue-200"
+              className="bg-white text-black w-full pl-10 pr-4 py-2 border rounded-xl focus:ring focus:ring-blue-200"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />

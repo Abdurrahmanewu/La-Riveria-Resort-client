@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="mx-auto max-w-screen-lg px-4 md:px-8 lg:px-12 pt-24">
+    <div className="text-black mx-auto max-w-screen-lg px-4 md:px-8 lg:px-12 pt-28">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center">
         About La Riveria Resort & Park
       </h2>

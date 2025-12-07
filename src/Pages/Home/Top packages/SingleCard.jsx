@@ -44,9 +44,9 @@ const SingleCard = ({ card }) => {
         <figure>
           <img src={img} alt={title} className="w-full  object-cover" />
         </figure>
-        <div className="card-body p-5">
-          <h2 className="card-title text-2xl bold">{title}</h2>
-          <p className="text-xl font-semibold">
+        <div className="card-body p-5 bg-white">
+          <h2 className="card-title text-2xl bold text-black">{title}</h2>
+          <p className="text-xl font-semibold text-black">
             Price: <span className="text-xl font-extrabold">৳{price}</span>
           </p>
           <Link to={`/singleCardDetails/${_id}`}>

@@ -121,7 +121,7 @@ const SignUp = () => {
               name="name"
               placeholder="Name"
               required
-              className="p-3 border border-gray-300 rounded-lg"
+              className="bg-white text-black p-3 border border-gray-300 rounded-lg"
               {...register("name")}
             />
             <div className="grid grid-cols-1 gap-4 lg:gap-10">
@@ -130,7 +130,7 @@ const SignUp = () => {
                 name="email"
                 placeholder="Email"
                 required
-                className="p-3 border border-gray-300 rounded-lg"
+                className="bg-white text-black p-3 border border-gray-300 rounded-lg"
                 {...register("email")}
               />
               <input
@@ -138,7 +138,7 @@ const SignUp = () => {
                 name="password"
                 placeholder="password"
                 // required
-                className="p-3 border border-gray-300 rounded-lg"
+                className="bg-white text-black p-3 border border-gray-300 rounded-lg"
                 {...register("password", {
                   required: true,
                   minLength: 6,
@@ -186,7 +186,6 @@ const SignUp = () => {
           <SocialSignUp></SocialSignUp>
         </div>
       </div>
-      
     </div>
   );
 };

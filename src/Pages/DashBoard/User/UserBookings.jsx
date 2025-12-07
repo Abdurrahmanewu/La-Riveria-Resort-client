@@ -87,7 +87,7 @@ const UserBookings = () => {
       <div className="hidden lg:block overflow-x-auto">
         <table className="table w-full">
           <thead>
-            <tr>
+            <tr className="text-black">
               <th>No.</th>
               <th>Image</th>
               <th>Name</th>

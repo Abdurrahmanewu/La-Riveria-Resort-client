@@ -112,7 +112,7 @@ const Login = () => {
               name="email"
               placeholder="Email"
               required
-              className="p-3 border border-gray-300 rounded-lg"
+              className="bg-white text-black p-3 border border-gray-300 rounded-lg"
             />
             <div className="grid grid-cols-1 gap-2">
               <input
@@ -120,7 +120,7 @@ const Login = () => {
                 name="password"
                 placeholder="password"
                 required
-                className="p-3 border border-gray-300 rounded-lg"
+                className="bg-white text-black p-3 border border-gray-300 rounded-lg"
               />
               <div className="mt-2 p-0 ">
                 <LoadCanvasTemplate />
@@ -131,7 +131,7 @@ const Login = () => {
                 name="captcha"
                 placeholder="type text above"
                 required
-                className="p-3 border border-gray-300 rounded-lg"
+                className="bg-white text-black p-3 border border-gray-300 rounded-lg"
               />
             </div>
 

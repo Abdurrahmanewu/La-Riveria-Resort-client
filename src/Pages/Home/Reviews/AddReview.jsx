@@ -109,7 +109,7 @@ const AddReview = () => {
               name="name"
               placeholder="Name"
               required
-              className="p-3 border border-gray-300 rounded-lg"
+              className="p-3 border border-gray-300 rounded-lg bg-white text-black"
               {...register("name")}
             />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -118,7 +118,7 @@ const AddReview = () => {
                 name="phone"
                 placeholder="Phone Number"
                 required
-                className="p-3 border border-gray-300 rounded-lg"
+                className="p-3 border border-gray-300 rounded-lg bg-white text-black"
                 {...register("phone")}
               />
               <input
@@ -126,7 +126,7 @@ const AddReview = () => {
                 name="email"
                 readOnly
                 required
-                className="p-3 border border-gray-300 rounded-lg"
+                className="p-3 border border-gray-300 rounded-lg bg-white text-black"
                 {...register("email")}
               />
             </div>
@@ -135,13 +135,13 @@ const AddReview = () => {
               name="designation"
               placeholder="Designation"
               required
-              className="p-3 border border-gray-300 rounded-lg"
+              className="p-3 border border-gray-300 rounded-lg  bg-white text-black"
               {...register("designation")}
             />
             <textarea
               name="feedback"
               placeholder="Add your precious review here..."
-              className="p-3 border border-gray-300 rounded-lg lg:h-[30vh]"
+              className="p-3 border border-gray-300 rounded-lg lg:h-[30vh]  bg-white text-black"
               {...register("feedback")}
             ></textarea>
             <button

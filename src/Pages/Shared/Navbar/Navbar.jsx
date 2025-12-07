@@ -24,12 +24,18 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
   const closeDropdown = () => setIsDropdownOpen(false);
+  const navLinkClass = ({ isActive }) =>
+    `transition duration-300 ${
+      isActive
+        ? "text-orange-500 bg-black"
+        : "hover:text-orange-500 hover:bg-black"
+    }`;
   const menuItems = (
     <>
       <li>
         <Link
           to="/"
-          className="hover:text-orange-500 hover:bg-orange-200 transition duration-300 "
+          className=" hover:text-orange-500 hover:bg-black transition duration-300 "
           onClick={closeDropdown}
         >
           Home
@@ -38,7 +44,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/packages"
-          className="hover:text-orange-500 hover:bg-orange-200 transition duration-300 "
+          className="hover:text-orange-500 hover:bg-black transition duration-300 "
           onClick={closeDropdown}
         >
           Packages
@@ -47,7 +53,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/activities"
-          className="hover:text-orange-500 hover:bg-orange-200 transition duration-300 "
+          className="hover:text-orange-500 hover:bg-black transition duration-300 "
           onClick={closeDropdown}
         >
           Activities
@@ -56,7 +62,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/about"
-          className="hover:text-orange-500 hover:bg-orange-200 transition duration-300 "
+          className="hover:text-orange-500 hover:bg-black transition duration-300 "
           onClick={closeDropdown}
         >
           About Us
@@ -65,7 +71,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/contacts"
-          className="hover:text-orange-500 hover:bg-orange-200 transition duration-300 "
+          className="hover:text-orange-500 hover:bg-black transition duration-300 "
           onClick={closeDropdown}
         >
           Contacts
@@ -74,7 +80,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar fixed z-10 max-h-[10vh] bg-black bg-opacity-30 text-white w-full px-4 lg:px-10">
+    <div className="navbar fixed z-10 max-h-[15vh] bg-black bg-opacity-30 text-black w-full px-4 lg:px-10">
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
           <div
@@ -101,7 +107,7 @@ const Navbar = () => {
           {isDropdownOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 bg-opacity-50 rounded-box z-[1] text-black"
+              className="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-white rounded-box z-[1] text-black border-black border"
             >
               {menuItems}
             </ul>
@@ -145,7 +151,7 @@ const Navbar = () => {
               >
                 <li>
                   <Link
-                    to="/dashboard"
+                    to="/dashboard/userbookings"
                     className="btn bg-[#d89b62] text-sm md:text-base lg:text-lg text-black hover:bg-[#c2681e] py-2 px-3"
                   >
                     My Orders

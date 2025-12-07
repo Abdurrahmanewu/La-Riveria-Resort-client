@@ -3,7 +3,7 @@ import boat from "../../assets/Activities/Boat Riding.jpg";
 import playZone from "../../assets/Activities/PlaZone-2.jpg";
 const Activities = () => {
   return (
-    <div className="mx-auto max-w-screen-xl px-4 md:px-8 lg:px-12 pt-28">
+    <div className="text-black mx-auto max-w-screen-xl px-4 md:px-8 lg:px-12 pt-28">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10">
         Adventure Awaits Beyond Your Doorstep
       </h2>
@@ -25,18 +25,18 @@ const Activities = () => {
             Find Your Angling Nirvana in <br />
             Nature's Haven
           </h3>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-400 mb-6">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl  mb-6">
             Welcome to La Riveria Resort & Park, a place where nature and
             adventure come together to create unforgettable memories. Our
             exhilarating boat riding service lets you glide over the calm waters
             while enjoying breathtaking views of the lush greenery around.
           </p>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-400 mb-6">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6">
             Whether you seek a peaceful escape or an exciting ride, we have
             options for everyone. Enjoy thrilling speedboat rides or relax on a
             sunset cruise for a mesmerizing experience.
           </p>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-400">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl">
             Safety is our priority, and our experienced guides ensure a smooth
             and enjoyable ride. So, don’t miss out—hop aboard and let the beauty
             of La Riveria Resort & Park create memories that last a lifetime!
@@ -54,7 +54,7 @@ const Activities = () => {
             <br />
             Fun & Smiles!
           </h3>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-400 mb-6">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6">
             Welcome to La Riveria Resort & Park, a place where families create
             unforgettable memories. We are thrilled to introduce our Children’s
             Playground, a safe and exciting space designed just for kids! Here,
@@ -64,13 +64,13 @@ const Activities = () => {
             child-friendly materials, ensuring a safe and enjoyable experience
             for all.
           </p>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-400 mb-6">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6">
             While children immerse themselves in play, parents can relax knowing
             their little ones are in a secure environment. Whether you're here
             for a family vacation or a weekend getaway, our playground promises
             endless joy and laughter for the youngest guests.
           </p>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-400">
+          <p className="text-lg mb-4 sm:text-xl md:text-2xl lg:text-3xl">
             So let the kids run, jump, and explore while you unwind in the
             beauty of our resort. Fun-filled memories await at La Riveria Resort
             & Park!
